@@ -91,6 +91,7 @@ decl_module! {
 			<Balances<T>>::insert(sender, Self::total_supply());
 
 			Init::put(true);
+		
 			Ok(())
 		}
 

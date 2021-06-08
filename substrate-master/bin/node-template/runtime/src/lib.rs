@@ -288,6 +288,11 @@ impl pallet_dispatch_stake::Config for Runtime {
 impl pallet_dispatch_sig::Config for Runtime {
 	type Event = Event;
 }
+
+impl pallet_quan_stake::Config for Runtime {
+	type Event = Event;
+}
+
 // Create the runtime by composing the FRAME pallets that were previously configured.
 construct_runtime!(
 	pub enum Runtime where
@@ -308,6 +313,7 @@ construct_runtime!(
 		TokenModule:pallet_token::{Pallet, Call, Storage, Event<T>},
 		StakeMoudle:pallet_dispatch_stake::{Pallet, Call, Storage, Event<T>},
 		DispSigMoudle:pallet_dispatch_sig::{Pallet, Call, Storage, Event<T>},
+		QuanStakeMoudle:pallet_quan_stake::{Pallet, Call, Storage, Event<T>},
 	}
 );
 
